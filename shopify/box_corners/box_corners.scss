@@ -1,0 +1,55 @@
+    // Creates brackets on each corner of the parent div.
+    // To update w/h of each bracket, update X. X should always be the difference between A/A and B/B.
+
+.corner {
+    width: 27px; //A
+    height: 27px; //A
+    background-color: #ccc;
+    position: absolute;
+
+    &.corner--top-left {
+      top: 0;
+      left: 0;
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+    }
+    &.corner--top-right {
+      top: 0;
+      right: 0;
+
+      &::after {
+        top: 7px; //X
+        right: 7px; //X
+      }
+    }
+    &.corner--bottom-left {
+      bottom: 0;
+      left: 0;
+
+      &::after {
+        bottom: 7px; //X
+        left: 7px; //X
+      }
+    }
+    &.corner--bottom-right {
+      bottom: 0;
+      right: 0;
+
+      &::after {
+        bottom: 7px; //X
+        right: 7px; //X
+      }
+    }
+
+    &::after {
+      content: ' ';
+      width: 20px; //B
+      height: 20px; //B
+      background-color: white;
+      display: block;
+      position: absolute;
+    }
+  }
